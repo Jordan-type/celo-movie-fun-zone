@@ -1,0 +1,54 @@
+:root {
+  --dosis: 'Dosis', sans-serif;
+  --nunito: 'Nunito', sans-serif;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semi-bold: 600;
+  --fw-bold: 700;
+  --fw-extra-bold: 800;
+
+  --red: hsl(343, 100%, 43%);
+  --red-light: hsl(343, 71%, 43%);
+  --white: hsl(0, 0%, 100%);
+  --dark-blue: hsl(210, 91%, 4%);
+  --dark: hsl(0, 0%, 0%);
+  --dark-light: hsl(0, 0%, 5%);
+  --dark-blue-transparent: hsla(210, 90%, 4%, 0.9);
+  --gray-blue: hsl(210, 30%, 9%);
+  --gray-light: hsl(211, 17%, 72%);
+
+  --fs-h1: clamp(2.4rem, 1vw + 2rem, 8rem);
+  --fs-h2: clamp(1.5rem, 1vw + 1rem, 3rem);
+  --fs-h3: clamp(1.5rem, 1vw + 1rem, 2rem);
+  --fs-h4: clamp(1rem, 1vw + 0.3rem, 1.8rem);
+  --fs-card-title: clamp(1rem, 1vw + 0.4rem, 1.8rem);
+  --fs-text: clamp(1rem, 1vw + 0.3rem, 1.5rem);
+  --fs-text-small: clamp(0.9rem, 0.3vw + 0.1rem, 1.2rem);
+  --fs-button: clamp(0.8rem, 0.9vw + 0.1rem, 1.8rem);
+
+  --border-radius-button: 5px;
+  --border-radius-button-xxl: 8px;
+}
+//Variables
+$padding-layout-mobile: 4vw;
+$padding-layout-tablet: 4vw;
+$padding-layout-desktop: 5vw;
+$padding-layout-desktop-xl: 5vw;
+$padding-layout-desktop-xxl: 8vw;
+
+//Maps
+$breakpoints: (
+  // 400px
+  xs: 25em,
+  // 544px
+  ms: 34em,
+  // 768px
+  md: 48em,
+  // 960px
+  lg: 60em,
+  // 1280px
+  xl: 80em,
+  // 1440px
+  xxl: 90em
+);

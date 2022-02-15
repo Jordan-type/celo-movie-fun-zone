@@ -1,0 +1,65 @@
+.card {
+  min-width: 7rem;
+  background: transparent;
+  transition: all 0.2s ease-in-out;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  grid-template-rows: 1fr auto auto;
+  row-gap: 0.7rem;
+  grid-template-areas:
+    'image image image'
+    'title title title'
+    ' date  heart star';
+
+  &:hover,
+  &:focus {
+    .card__title {
+      color: var(--red);
+    }
+    .card__cover {
+      background-color: hsla(343, 100%, 43%, 0.35);
+    }
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+  &__img,
+  &__cover {
+    grid-area: image;
+    border-radius: 12px;
+    margin-bottom: 0.6rem;
+    transition: all 0.2s ease-in-out;
+  }
+
+  &__title {
+    grid-area: title;
+    width: 90%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--white);
+    transition: all 0.2s ease-in-out;
+  }
+
+  &__date {
+    grid-area: date;
+    color: var(--gray-light);
+  }
+
+  &__heart {
+    align-self: center;
+    margin-right: 1rem;
+  }
+
+  &__star-container {
+    display: flex;
+    place-self: center;
+    column-gap: 0.6rem;
+  }
+
+  &__star {
+    align-self: center;
+  }
+}

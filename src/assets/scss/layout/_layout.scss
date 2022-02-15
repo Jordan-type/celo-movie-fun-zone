@@ -1,0 +1,49 @@
+@use '../sass-utils/all' as *;
+
+#root {
+  background-color: var(--dark-blue);
+}
+
+.layout {
+  place-self: center;
+  display: grid;
+  grid-template-columns: $padding-layout-mobile auto $padding-layout-mobile;
+  grid-template-rows: 7vh 1fr auto auto;
+  grid-template-areas:
+    ' header   header   header '
+    '  hero     hero     hero  '
+    '   .    content    .'
+    '  footer  footer   footer ';
+
+  @include query(md) {
+    grid-template-columns: $padding-layout-tablet auto $padding-layout-tablet;
+  }
+
+  @include query(lg) {
+    grid-template-columns: $padding-layout-desktop auto $padding-layout-desktop;
+  }
+
+  @include query(xl) {
+    grid-template-columns: $padding-layout-desktop-xl auto $padding-layout-desktop-xl;
+  }
+
+  @include query(xxl) {
+    grid-template-columns: $padding-layout-desktop-xxl auto $padding-layout-desktop-xxl;
+  }
+}
+
+.header {
+  grid-area: header;
+}
+
+.hero {
+  grid-area: hero;
+}
+
+.content {
+  grid-area: content;
+}
+
+.footer {
+  grid-area: footer;
+}

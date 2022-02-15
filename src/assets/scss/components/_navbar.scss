@@ -1,0 +1,18 @@
+@use '../sass-utils/all' as *;
+
+.navbar {
+  &__list {
+    display: flex;
+    gap: 3rem;
+    color: white;
+  }
+
+  &__link {
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    &:hover,
+    &:focus {
+      color: var(--red);
+    }
+  }
+}

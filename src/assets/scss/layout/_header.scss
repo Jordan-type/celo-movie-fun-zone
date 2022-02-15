@@ -1,0 +1,53 @@
+@use '../sass-utils/all' as *;
+
+.header {
+  background-color: var(--dark-blue);
+  position: sticky;
+  z-index: 4;
+  top: 0;
+  display: flex;
+
+  place-items: center;
+  padding: 0 $padding-layout-mobile;
+
+  @include query(md) {
+    padding: 0 $padding-layout-tablet;
+  }
+  @include query(lg) {
+    padding: 0 $padding-layout-desktop;
+  }
+
+  @include query(xl) {
+    padding: 0 $padding-layout-desktop-xl;
+  }
+
+  @include query(xxl) {
+    padding: 0 $padding-layout-desktop-xxl;
+  }
+
+  &__item {
+    display: flex;
+    gap: 4rem;
+
+    &:nth-child(1) {
+      justify-content: start;
+      flex-basis: 33.3%;
+    }
+
+    &:nth-child(2) {
+      justify-content: center;
+      flex-basis: 33.3%;
+    }
+
+    &:nth-child(3) {
+      flex-basis: 33.3%;
+      justify-content: end;
+      display: flex;
+      gap: 2rem;
+    }
+  }
+
+  &__link {
+    color: var(--white);
+  }
+}
