@@ -1,0 +1,20 @@
+const { config } = require("webpack");
+
+module.exports = {
+    webpack: (config) => {
+        config.resolve.fallback = {
+            ...config.resolve.fallback,
+            assert: false,
+            crypto: false,
+              http: require.resolve('stream-http'),
+              "https": require.resolve('https-browserify'),
+            http: false,
+            https: false,
+            os: false,
+            net: false,
+            fs: false,
+            stream: false,
+    };
+    return config;
+  },
+};
