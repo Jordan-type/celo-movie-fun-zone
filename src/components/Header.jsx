@@ -8,7 +8,8 @@ import Search from "../components/Search/Search";
 import SearchContainer from "./Search/SearchContainer";
 
 
-export default function Header() {
+export default function Header({ web3Handler, account, balance, explorerURL }) {
+
   const [searchOpen, setSearchOpen] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const breakpointTablet = 960;
@@ -46,8 +47,28 @@ export default function Header() {
         <Search className={'search-icon'} open={handleToggleSearch} />
         {windowWidth > breakpointTablet && (
         <>
+        {account ? (
+            <a 
+              href={`${explorerURL}/address/${account}`}
+              className="button--red"
+              target="_blank"
+              rel="noopener noreferrer">
+              {account.slice(0, 5) + '...' + account.slice(38, 42)}
+
+              <span style={{padding: 2}}> 
+                    <button className="button--red">
+                      Balance: {balance} cUSD
+                    </button>
+              </span>
+            </a>
+
+          ) : (
+          
+          <Button onClick={ web3Handler } className="button--red" content="Connect Wallet" tabIndex="4" /> 
+
+          )}
          {/* <Button className="button--black" content="Sign in" tabIndex="3" /> */}
-         <Button className="button--red" content="Connect Wallet" tabIndex="4" />
+         
         </>
         )}
       </div>
